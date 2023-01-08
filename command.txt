@@ -1,0 +1,8 @@
+=======backend command============
+npm init                                            #intialize
+npm install mysql express dotenv cors nodemon       #install dependecies and packages
+npm run dev
+
+=======frontend command==========
+npx create-react-app .                      #intialize react in currnnt path
+npx start                                   #start frontend
