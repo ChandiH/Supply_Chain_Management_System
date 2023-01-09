@@ -1,3 +1,5 @@
+USE scms;
+
 INSERT INTO stores(name, city) VALUES
 ('Main Branch','Kandy'),
 ('Colombo Branch','Colombo'),
@@ -29,7 +31,8 @@ INSERT INTO routes(startingCity, endingCity, travelTime) VALUES
 ('Galle', 'Hambanthota', 120),
 ('Mathara', 'Ambilipitiya', 260),
 ('Jaffna', 'Anuradhapura', 320),
-('Trinco', 'Anurashapura', 180);
+('Trinco', 'Anurashapura', 180),
+('Colombo', 'Anuradhapura', 320);
 
 INSERT INTO employees(firstName, lastName, address, position) VALUES
 ('Kamal', 'Perera', 'No. 12, Galle Road, Colombo', 'assistant'),
@@ -106,3 +109,46 @@ INSERT INTO products(title, imagePath, details, capacityConsumption, price) VALU
 ('Wall Clock', '/images/clock.jpg', 'A stylish and functional wall clock. This clock is made with a metal frame and features a clear and easy-to-read dial. It has a diameter of 12 inches and is suitable for use in any room. The clock has a silent movement and is powered by a single AA battery. It is perfect for keeping track of time and adding a touch of style to any wall.', '1', 10000),
 ('Outdoor Gazebo', '/images/gazebo.jpg', 'A stylish and functional outdoor gazebo. This gazebo is made with a metal frame and a canopy made of water-resistant fabric. It is suitable for use in gardens, patios, and other outdoor spaces. The gazebo has a diameter of 10 feet and is suitable for seating up to 8 people. It is perfect for providing shade and protection from the sun and rain.', '8', 35000),
 ('Standing Mirror', '/images/mirror.jpg', 'A stylish and functional standing mirror. This mirror is made with a metal frame and has a size of 24 inches by 36 inches. It is suitable for use in bedrooms, dressing rooms, and other spaces. The mirror is mounted on a stand and can be adjusted to different angles. It is perfect for checking your appearance and adding a touch of style to any room.', '1', 10000);
+
+INSERT INTO order_status(trackingNo, status) VALUES
+(1,'pending_for_confirmation'),
+(2,'not_paid_yet'),
+(3,'order_in_warehouse'),
+(4,'train_package'),
+(5,'destination_warehouse'),
+(6,'truck_package'),
+(7,'delivered');
+
+INSERT INTO orders(customerID, productID, date, quantity, routeID, trackingNO) VALUES
+(10, 3,now(), 1, 5, 1),
+(8, 2, now(), 2, 6, 2),
+(5, 7, now(), 1, 9, 1),
+(7, 4, now(), 1, 11, 2),
+(7, 8, now(), 2, 11, 2),
+(7, 1, now(), 1, 11, 2),
+(2, 18, now(), 1, 1, 2),
+(1, 16, now(), 1, 4, 2),
+(6, 14, now(), 1, 11, 2),
+(12, 12, now(), 1, 1, 2),
+(10, 2,now(), 1, 5, 1),
+(8, 1, now(), 2, 6, 2),
+(5, 4, now(), 1, 9, 1),
+(7, 4, now(), 1, 11, 2),
+(7, 8, now(), 2, 11, 2),
+(7, 18, now(), 1, 11, 2),
+(2, 7, now(), 1, 1, 2),
+(1, 3, now(), 1, 4, 2),
+(6, 2, now(), 1, 11, 2),
+(12, 3, now(), 1, 1, 2),
+(7, 8, '2022-03-09 12:56:44', 2, 11, 7),
+(7, 1, '2022-04-09 12:56:44', 1, 11, 7),
+(2, 18, '2022-06-09 12:56:44', 1, 1, 7),
+(1, 16, '2022-04-09 12:56:44', 1, 4, 7),
+(6, 14, '2022-03-09 12:56:44', 1, 11, 7),
+(12, 12, '2022-07-09 12:56:44', 1, 1, 7),
+(10, 2,'2022-11-11 12:56:44', 1, 5, 7),
+(8, 1, '2022-12-09 12:56:44', 2, 6, 7),
+(5, 4, '2022-12-09 12:56:44', 1, 9, 7),
+(7, 4, '2022-05-09 12:56:44', 1, 11, 7),
+(7, 8, '2022-02-09 12:56:44', 2, 11, 7),
+(7, 18, '2022-01-09 12:56:44', 1, 11, 7);
