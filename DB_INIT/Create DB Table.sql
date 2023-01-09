@@ -41,7 +41,7 @@ CREATE TABLE `scms`.`products` (
   `details` VARCHAR(1000),
   `capacityConsumption` MEDIUMINT NOT NULL,
   `price` DECIMAL(8,2) NOT NULL,
-  `discount` DECIMAL(8,2) NULL,
+  `discount` DECIMAL(8,2) DEFAULT 0,
   PRIMARY KEY (`ID`));
 
 
@@ -75,7 +75,7 @@ CREATE TABLE `scms`.`orders` (
   `orderID` INT NOT NULL AUTO_INCREMENT,
   `customerID` INT NOT NULL,
   `productID` INT NOT NULL,
-  `date` DATE NOT NULL,
+  `date` DATETIME NOT NULL,
   `quantity` SMALLINT NOT NULL,
   `routeID` MEDIUMINT NULL,
   `trackingNO` SMALLINT NULL,
