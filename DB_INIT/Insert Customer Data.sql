@@ -10,7 +10,7 @@ INSERT INTO stores(name, city) VALUES
 ('Trinco Branch','Trinco');
 
 INSERT INTO trucks(storeID, licenseID) VALUES
-  (1 , 'ABC-1234'),
+  (1 ,'ABC-1234'),
   (6, 'DEF-5678'),
   (5, 'GHI-9101'),
   (1, 'JKL-1213'),
@@ -18,8 +18,8 @@ INSERT INTO trucks(storeID, licenseID) VALUES
   (3, 'PQR-1617'),
   (4, 'STU-1819'),
   (6, 'VWX-2021'),
-  (5, 'YZ1-2223'),
-  (7, '234-2425');
+  (5, 'YZQ-2223'),
+  (7, 'QQQ-2425');
 
 INSERT INTO routes(startingCity, endingCity, travelTime) VALUES
 ('Kandy', 'Mathale', 220),
