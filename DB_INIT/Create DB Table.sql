@@ -212,3 +212,4 @@ CREATE TABLE `scms`.`train_package` (
     REFERENCES `scms`.`orders` (`orderID`)
     ON DELETE CASCADE
     ON UPDATE CASCADE);
+
