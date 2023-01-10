@@ -169,5 +169,3 @@ VALUES (1, 'EXPRESS-1', 'Kandy', 'Colombo Fort', '2022-05-01', '08:00:00', 500),
        (13, 'EXPRESS-13', 'Polgahawela', 'Jaffna', '2022-05-13', '10:00:00', 500),
        (14, 'INTER-CITY-14', 'Polgahawela', 'Anuradhapura', '2022-05-14', '11:00:00', 600),
        (15, 'EXPRESS-15', 'Polgahawela', 'Badulla', '2022-05-15', '12:00:00', 450);
-
-INSERT INTO 
