@@ -14,7 +14,7 @@ Orders Table ->
 *route table eken balala danna
 *thwa orders daddi date ek hri format ekenm denn 
 *thwa 2021/01/01 company ek ptn gaththa kiyla hithn wisirenna danna orders tika aduma masekt 
-ek order ekkwth wetena widiht
+ek order ekkwth wetena widiht.
 ====================================================================
 Contact Number->
 *me table eknm nikm value tikk dann
