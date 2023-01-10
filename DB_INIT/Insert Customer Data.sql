@@ -152,3 +152,22 @@ INSERT INTO orders(customerID, productID, date, quantity, routeID, trackingNO) V
 (7, 4, '2022-05-09 12:56:44', 1, 11, 7),
 (7, 8, '2022-02-09 12:56:44', 2, 11, 7),
 (7, 18, '2022-01-09 12:56:44', 1, 11, 7);
+
+INSERT INTO train_schedule (scheduleID, trainNumber, `from`, `to`, date, time, allocatedCapacity) 
+VALUES (1, 'EXPRESS-1', 'Kandy', 'Colombo Fort', '2022-05-01', '08:00:00', 500),
+       (2, 'INTER-CITY-2', 'Kandy', 'Galle', '2022-05-02', '09:00:00', 400),
+       (3, 'EXPRESS-3', 'Kandy', 'Jaffna', '2022-05-03', '15:00:00', 600),
+       (4, 'INTER-CITY-4', 'Kandy', 'Anuradhapura', '2022-05-04', '08:30:00', 550),
+       (5, 'EXPRESS-5', 'Kandy', 'Badulla', '2022-05-05', '10:00:00', 450),
+       (6, 'INTER-CITY-6', 'Colombo', 'Kandy', '2022-05-06', '14:00:00', 600),
+       (7, 'EXPRESS-7', 'Colombo', 'Galle', '2022-05-07', '15:00:00', 550),
+       (8, 'INTER-CITY-8', 'Colombo', 'Jaffna', '2022-05-08', '16:00:00', 650),
+       (9, 'EXPRESS-9', 'Colombo', 'Anuradhapura', '2022-05-09', '17:00:00', 400),
+       (10, 'INTER-CITY-10', 'Colombo', 'Badulla', '2022-05-10', '18:00:00', 500),
+       (11, 'EXPRESS-11', 'Polgahawela', 'Kandy', '2022-05-11', '08:00:00', 450),
+       (12, 'INTER-CITY-12', 'Polgahawela', 'Galle', '2022-05-12', '09:00:00', 550),
+       (13, 'EXPRESS-13', 'Polgahawela', 'Jaffna', '2022-05-13', '10:00:00', 500),
+       (14, 'INTER-CITY-14', 'Polgahawela', 'Anuradhapura', '2022-05-14', '11:00:00', 600),
+       (15, 'EXPRESS-15', 'Polgahawela', 'Badulla', '2022-05-15', '12:00:00', 450);
+
+INSERT INTO 
