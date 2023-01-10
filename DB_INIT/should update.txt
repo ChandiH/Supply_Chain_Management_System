@@ -29,7 +29,12 @@ log->
 *me table ek hema auruddema reset wenw kiyl hithmu
 *A hinda me maset inn employeeslge log tik demmnm athi ada dwst wenkn
 ====================================================================
-train schedule->
+train schedule-> Ishan
 *mektth monaahri value tikk danna gelapenna
 ====================================================================
-
+train package Table -> Ishan
+*me table ekth hema year ekkm update wenw kiyla hitla me aurudde denata dapu
+orders wl date tik demmnm athi
+*mek update krdii orders tika balala schedule ekth balala update krnn
+ex: 2022/03/04 order ekk demmnm 
+====================================================================
