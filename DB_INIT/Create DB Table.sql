@@ -136,6 +136,25 @@ CREATE TABLE `scms`.`employees` (
   `position` ENUM('driver','assistant'),
   PRIMARY KEY (`ID`));
 
+CREATE TABLE `scms`.`employees` (
+  `ID` INT NOT NULL AUTO_INCREMENT,
+  `firstName` VARCHAR(50) NOT NULL,
+  `lastName` VARCHAR(50) NOT NULL,
+  `address` VARCHAR(250) NOT NULL,
+  `position` ENUM('driver','assistant'),
+  PRIMARY KEY (`ID`));
+  
+CREATE TABLE `scms`.`log` (
+  `employeeID` INT NOT NULL,
+  `date` DATETIME NOT NULL,
+  `arrivalTime` TIME NULL,
+  PRIMARY KEY (`employeeID`, `date`),
+  CONSTRAINT `employee`
+    FOREIGN KEY (`employeeID`)
+    REFERENCES `scms`.`employees` (`ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+    
 CREATE TABLE `scms`.`truck_schedule` (
   `scheduleID` INT NOT NULL AUTO_INCREMENT,
   `truckID` VARCHAR(10),
