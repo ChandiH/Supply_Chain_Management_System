@@ -24,7 +24,7 @@ route->
 A station ekk lagane store ekk thiyenne ek hinda thiyen store ekkin ptn gnn 
 widiht route dann 
 ====================================================================
-cities ->
+cities -
 *A route ekt adala cities tikth cities table eke dann ooni
 ====================================================================
 log->
