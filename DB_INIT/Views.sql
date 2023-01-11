@@ -1,6 +1,7 @@
 drop view if exists numof_orders_products;
 drop view if exists orders_products;
 drop view if exists overall_sales;
+drop view if exists working_hours;
 
 CREATE VIEW numof_orders_products AS
 SELECT 
@@ -38,3 +39,37 @@ select
 join products on (productID = ID)
 group by year(date), month(date)
 order by year(date) desc, month(date) desc;
+
+create view working_hours as 
+SELECT 
+	ID,
+	firstName,
+	lastName,
+	position,
+	branch,
+	year(date) as yearOf,
+	month(date) as monthOf,
+	SUM(travelTime) as 'total travel time',
+	SUM(((travelTime*2)+120)/60) as WorkingHour
+FROM employees e
+join truck_schedule ts ON (e.ID = ts.driverAssistant)
+join routes using (routeID)
+where e.position = 'assistant'
+group by ID, year(date), month(date)
+union 
+SELECT 
+	ID,
+	firstName,
+	lastName,
+	position,
+	branch,
+	year(date) as yearOf,
+	month(date) as monthOf,
+	SUM(travelTime) as 'total travel time',
+	SUM(((travelTime*2)+120)/60) as WorkingHour
+FROM employees e
+join truck_schedule ts ON (e.ID = ts.driver)
+join routes using (routeID)
+where e.position = 'driver'
+group by ID, year(date), month(date)
+order by position;

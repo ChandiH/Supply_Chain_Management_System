@@ -34,18 +34,30 @@ INSERT INTO routes(startingCity, endingCity, travelTime) VALUES
 ('Trinco', 'Anurashapura', 180),
 ('Colombo', 'Anuradhapura', 320);
 
-INSERT INTO employees(firstName, lastName, address, position) VALUES
-('Kamal', 'Perera', 'No. 12, Galle Road, Colombo', 'assistant'),
-('Nimal', 'Jayasinghe', 'No. 15, Kandy Road, Kandy', 'driver'),
-('Pamela', 'Fernando', 'No. 17, Galle Road, Colombo', 'assistant'),
-('Ruwan', 'Gunasekara', 'No. 21, Galle Road, Galle', 'driver'),
-('Saman', 'Kumarasinghe', 'No. 25, Kandy Road, Kurunegala', 'driver'),
-('Thilini', 'Perera', 'No. 31, Jaffna Road, Jaffna', 'assistant'),
-('Udaya', 'Weerasinghe', 'No. 37, Galle Road, Matara', 'driver'),
-('Vihanga', 'Fernando', 'No. 41, Kandy Road, Kandy', 'driver'),
-('Wimal', 'Jayawardana', 'No. 45, Galle Road, Colombo', 'assistant'),
-('Yasas', 'Perera', 'No. 51, Anuradhapura Road, Anuradhapura', 'driver');
+INSERT INTO employees(firstName, lastName, address, position, branch) VALUES
+('Madura', 'Gunasingha', 'No 31, Kandy road, Kandy', 'manager', 'Kandy'),
+('Kamal', 'Perera', 'No 12, Galle road, Colombo 06', 'manager', 'Colombo'),
+('Saman', 'Kumara', 'No 1, Church street, Galle', 'manager', 'Galle'),
+('Dilshan', 'Fernando', 'No 11, Mathara road, Mathara', 'manager', 'Mathara'),
+('Chaminda', 'Vass', 'No 25, Trinco road, Trinco', 'manager', 'Trinco'),
+('Jeewantha', 'Ranasinghe', 'No 31, Jaffna road, Jaffna', 'manager', 'Jaffna'),
+('Nimal', 'Fernando', 'No. 26, Main Street, Negombo', 'assistant', 'Negombo'),
 
+('Ranjan', 'Rajapakse', 'No 16, Kandy road, Mathara', 'driver', 'Mathara'),
+('Niranjan', 'Jayasekara', 'No 19, Kegalle road, Kegalle', 'driver', 'Colombo'),
+('Damith', 'Perera', 'No 15, Colombo road, Colombo', 'driver', 'Jaffna'),
+('Chathura', 'Nanayakkara', 'No 35, Ratnapura road, Ratnapura', 'driver', 'Galle'),
+('Kamal', 'Jayawardene', 'No. 14, Park Road, Colombo 5', 'driver', 'Negombo'),
+('Dilip', 'Wickramasinghe', 'No. 10, Negombo Road, Negombo', 'driver', 'Trinco'),
+('Saman', 'Perera', 'No. 30, Mathara Road, Mathara', 'driver', 'Kandy'),
+
+
+('Priyankara', 'Jayasuriya', 'No. 20, Beach Road, Trinco', 'assistant', 'Trinco'),
+('Gayan', 'Karunaratne', 'No. 12, Jaffna Road, Jaffna', 'assistant', 'Jaffna'),
+('Chaminda', 'Perera', 'No. 32, Park Road, Colombo 7', 'assistant', 'Colombo'),
+('Roshan', 'Silva', 'No. 44, Main Street, Negombo', 'assistant', 'Negombo'),
+('Asanka', 'Jayasundera', 'No. 18, Trinco Road, Trinco', 'assistant', 'Galle'),
+('Thushara', 'Perera', 'No. 50, Mathara Road, Mathara', 'assistant', 'Mathara');
 
 INSERT INTO customers(firstName, lastName, email, street, city, state, zip) VALUES
 ("Nimal", "Weerasinghe", "nimal@gmail.com", "123 Main Street", "Colombo", "Western", "01234"),
@@ -89,6 +101,38 @@ INSERT INTO customers(firstName, lastName, email, street, city, state, zip) VALU
 ("Isuru", "Jayawardena", "isuru@gmail.com", "753 Pine Street", "Middeniya", "Southern", "01272"),
 ("Nipuna", "Weerasinghe", "nipuna@gmail.com", "951 Oak Street", "Buttala", "Southern", "01273");
 
+INSERT INTO contact_numbers (ID, phoneNumber) VALUES 
+(1, '+94711111111'),
+(2, '+94722222222'),
+(3, '+94733333333'),
+(4, '+94744444444'),
+(5, '+94755555555'),
+(6, '+94766666666'),
+(7, '+94777777777'),
+(8, '+94788888888'),
+(9, '+94799999999'),
+(10, '+94700000000'),
+(11, '+94711111112'),
+(12, '+94722222221'),
+(13, '+94733333331'),
+(14, '+94744444441'),
+(15, '+94755555551'),
+(16, '+94766666666'),
+(17, '+94777777771'),
+(18, '+94788888881'),
+(19, '+94799999991'),
+(20, '+94700000001'),
+(21, '+94711111113'),
+(22, '+94722222222'),
+(23, '+94733333333'),
+(24, '+94744444444'),
+(25, '+94755555555'),
+(26, '+94766666666'),
+(27, '+94777777777'),
+(28, '+94788888888'),
+(29, '+94799999999'),
+(30, '+94700000000');
+
 INSERT INTO products(title, imagePath, details, capacityConsumption, price) VALUES
 ('Solid Wood Dining Table', '/images/dining-table.jpg', 'A beautiful, handcrafted solid wood dining table. Made with high-quality wood and finished with a natural polish, this table is perfect for any dining room. It seats 8 people comfortably and is perfect for both formal dinners and casual gatherings. The sturdy construction ensures that it will last for years to come.', '8', 25000),
 ('Leather Sofa Set', '/images/sofa-set.jpg', 'A stylish and comfortable leather sofa set. This set includes a three-seater sofa, a two-seater sofa, and a single armchair. The seats and backrests are made with high-density foam and covered with soft, high-quality leather. The frame is made with solid wood, ensuring that the set is sturdy and durable. It seats 6 people comfortably and is perfect for living rooms and family rooms.', '6', 40000),
@@ -110,6 +154,29 @@ INSERT INTO products(title, imagePath, details, capacityConsumption, price) VALU
 ('Outdoor Gazebo', '/images/gazebo.jpg', 'A stylish and functional outdoor gazebo. This gazebo is made with a metal frame and a canopy made of water-resistant fabric. It is suitable for use in gardens, patios, and other outdoor spaces. The gazebo has a diameter of 10 feet and is suitable for seating up to 8 people. It is perfect for providing shade and protection from the sun and rain.', '8', 35000),
 ('Standing Mirror', '/images/mirror.jpg', 'A stylish and functional standing mirror. This mirror is made with a metal frame and has a size of 24 inches by 36 inches. It is suitable for use in bedrooms, dressing rooms, and other spaces. The mirror is mounted on a stand and can be adjusted to different angles. It is perfect for checking your appearance and adding a touch of style to any room.', '1', 10000);
 
+INSERT INTO train_schedule (trainNumber, _from, _to, date, time, allocatedCapacity) 
+VALUES ('EXPRESS-1', 'Kandy', 'Colombo Fort', '2022-01-14', '08:00:00', 550),
+       ('INTER-CITY-2', 'Kandy', 'Galle', '2022-01-14', '09:00:00', 540),
+       ('EXPRESS-3', 'Kandy', 'Jaffna', '2022-01-14', '15:00:00', 560),
+       ('INTER-CITY-4', 'Kandy', 'Negombo', '2022-01-14', '08:30:00', 555),
+       ('EXPRESS-5', 'Kandy', 'Trinco', '2022-01-15', '10:00:00', 545),
+       ('INTER-CITY-6', 'Colombo', 'Mathara', '2022-01-15', '14:00:00', 560),
+       ('EXPRESS-7', 'Colombo', 'Galle', '2022-01-15', '15:00:00', 555),
+       ('INTER-CITY-8', 'Colombo', 'Jaffna', '2022-01-15', '16:00:00', 565),
+       ('EXPRESS-9', 'Colombo', 'Anuradhapura', '2022-01-15', '17:00:00', 540),
+       ('INTER-CITY-10', 'Colombo', 'Jaffna', '2022-01-15', '18:00:00', 550),
+       ('EXPRESS-11', 'Polgahawela', 'Negambo', '2022-01-15', '08:00:00', 545),
+       ('INTER-CITY-12', 'Polgahawela', 'Galle', '2022-01-15', '09:00:00', 555),
+       ('EXPRESS-13', 'Polgahawela', 'Jaffna', '2022-01-15', '10:00:00', 550),
+       ('INTER-CITY-14', 'Polgahawela', 'Anuradhapura', '2022-01-15', '11:00:00', 160),
+       ('EXPRESS-15', 'Polgahawela', 'Matara', '2022-01-15', '12:00:00', 545),
+       ('EXPRESS-1', 'Kandy', 'Colombo Fort', '2022-01-16', '08:00:00', 550),
+       ('INTER-CITY-2', 'Kandy', 'Galle', '2022-01-16', '09:00:00', 540),
+       ('EXPRESS-3', 'Kandy', 'Jaffna', '2022-01-16', '15:00:00', 560),
+       ('INTER-CITY-4', 'Kandy', 'Anuradhapura', '2022-01-16', '08:30:00', 555),
+       ('EXPRESS-5', 'Kandy', 'Badulla', '2022-01-16', '10:00:00', 545);
+       
+       
 INSERT INTO order_status(trackingNo, status) VALUES
 (1,'pending_for_confirmation'),
 (2,'not_paid_yet'),
@@ -152,3 +219,60 @@ INSERT INTO orders(customerID, productID, date, quantity, routeID, trackingNO) V
 (7, 4, '2022-05-09 12:56:44', 1, 11, 7),
 (7, 8, '2022-02-09 12:56:44', 2, 11, 7),
 (7, 18, '2022-01-09 12:56:44', 1, 11, 7);
+
+INSert into truck_schedule(truckID, routeID,date,time,driver,driverAssistant) values
+('ABC-1234', 1, '2023-01-12', '08:00:00', 8, 15),
+('ABC-1234', 1, '2022-02-12', '08:00:00', 8, 15),
+('ABC-1234', 1, '2022-03-12', '08:00:00', 8, 15);
+
+INSERT INTO log (employeeID, date) VALUES
+(1, '2023-01-01 08:20:00'),
+(1, '2023-01-02 08:30:00'),
+(1, '2023-01-03 08:40:00'),
+(1, '2023-01-04 08:10:00'),
+(1, '2023-01-05 08:20:00'),
+(1, '2023-01-06 08:20:00'),
+(1, '2023-01-07 08:40:00'),
+(1, '2023-01-08 08:50:00'),
+(1, '2023-01-09 08:30:00'),
+(1, '2023-01-10 08:20:00'),
+(1, '2023-01-11 08:10:00'),
+(1, '2023-01-12 08:00:00'),
+(1, '2023-01-13 08:10:00'),
+(1, '2023-01-14 08:00:00');
+
+INSERT INTO  train_package (scheduleID, orderID) VALUES 
+      (1,1),
+      (1,2),
+      (1,3),
+      (1,4),
+      (1,5),
+      (1,6),
+      (1,7),
+      (1,8),
+      (2,9),
+      (2,10),
+      (2,11),
+      (2,12),
+      (2,13),
+      (2,14),
+      (2,15),
+      (2,16),
+      (2,17),
+      (2,18),
+      (2,19),
+      (2,20),
+      (3,21),
+      (3,22),
+      (3,23),
+      (3,24),
+      (3,25),
+      (3,26),
+      (5,27),
+      (5,28),
+      (8,29),
+      (9,30),
+      (7,31),
+      (6,32),
+      (18,19),
+      (19,10);

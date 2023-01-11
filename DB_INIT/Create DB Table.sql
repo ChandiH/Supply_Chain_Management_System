@@ -25,7 +25,7 @@ CREATE TABLE `scms`.`passwords` (
 
 CREATE TABLE `scms`.`contact_numbers` (
   `ID` INT NOT NULL,
-  `phoneNumber` VARCHAR(10) NOT NULL,
+  `phoneNumber` VARCHAR(12) NOT NULL,
   PRIMARY KEY (`ID`, `phoneNumber`),
   CONSTRAINT `ID`
     FOREIGN KEY (`ID`)
@@ -127,27 +127,18 @@ CREATE TABLE `scms`.`trucks` (
     ON DELETE CASCADE
     ON UPDATE CASCADE);
 
-
 CREATE TABLE `scms`.`employees` (
   `ID` INT NOT NULL AUTO_INCREMENT,
   `firstName` VARCHAR(50) NOT NULL,
   `lastName` VARCHAR(50) NOT NULL,
   `address` VARCHAR(250) NOT NULL,
-  `position` ENUM('driver','assistant'),
-  PRIMARY KEY (`ID`));
-
-CREATE TABLE `scms`.`employees` (
-  `ID` INT NOT NULL AUTO_INCREMENT,
-  `firstName` VARCHAR(50) NOT NULL,
-  `lastName` VARCHAR(50) NOT NULL,
-  `address` VARCHAR(250) NOT NULL,
-  `position` ENUM('driver','assistant'),
+  `position` ENUM('driver','assistant', 'manager'),
+  `branch` VARCHAR(25),
   PRIMARY KEY (`ID`));
   
 CREATE TABLE `scms`.`log` (
   `employeeID` INT NOT NULL,
   `date` DATETIME NOT NULL,
-  `arrivalTime` TIME NULL,
   PRIMARY KEY (`employeeID`, `date`),
   CONSTRAINT `employee`
     FOREIGN KEY (`employeeID`)
@@ -207,9 +198,9 @@ CREATE TABLE `scms`.`truck_packages` (
 
 CREATE TABLE `scms`.`train_schedule` (
   `scheduleID` INT NOT NULL AUTO_INCREMENT,
-  `trainNumber` MEDIUMINT NOT NULL,
-  `from` VARCHAR(50) NOT NULL,
-  `to` VARCHAR(50) NOT NULL,
+  `trainNumber` VARCHAR(20) NOT NULL,
+  `_from` VARCHAR(50) NOT NULL,
+  `_to` VARCHAR(50) NOT NULL,
   `date` DATE NOT NULL,
   `time` TIME NOT NULL,
   `allocatedCapacity` INT NOT NULL,
