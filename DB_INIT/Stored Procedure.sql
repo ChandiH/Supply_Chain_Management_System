@@ -3,8 +3,28 @@ drop procedure if exists view_quarter_sales;
 drop procedure if exists sales_report;
 drop procedure if exists get_working_hours;
 drop procedure if exists customer_report;
+drop procedure if exists city_sales;
 
-DELIMITER $$
+Delimiter $$
+create procedure city_sales(
+IN city VARCHAR(20)
+)
+begin 
+SELECT 
+startingCity as 'Main City',
+year(date) as 'year',
+month(date) as 'month',
+SUM(quantity*(price-discount)) as 'Gross Sales',
+SUM(quantity) as 'Total Units'
+FROM scms.orders
+join routes using (routeID)
+join products ON (ID = productID)
+where startingCity = city
+group by year(date), month(date)
+order by year(date) desc, month(date) asc;
+end$$
+
+
 create procedure view_month_sales
 (
 	IN input_year INT,
