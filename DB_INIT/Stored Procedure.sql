@@ -70,7 +70,8 @@ create procedure `working_hours/month(ID)`
 	(IN employer_ID INT)
 begin
 SELECT * FROM scms.`working_hours/month`
-where ID = employer_ID;
+where ID = employer_ID
+order by yearOf, monthOf;
 end$$
 
 

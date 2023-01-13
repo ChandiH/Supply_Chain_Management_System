@@ -84,7 +84,7 @@ join truck_schedule ts ON (e.ID = ts.driver)
 join routes using (routeID)
 where e.position = 'driver'
 group by ID, year(date), month(date)
-order by position;
+order by ID;
 
 
 create view `working_hours/week` as
@@ -115,4 +115,4 @@ join truck_schedule ts ON (e.ID = ts.driver)
 join routes using (routeID)
 where e.position = 'driver' and week(date) = week(now())
 group by ID
-order by position;
+order by ID;
