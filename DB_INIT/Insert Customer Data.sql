@@ -183,7 +183,7 @@ INSERT INTO order_status(trackingNo, status) VALUES
 (3,'order_in_warehouse'),
 (4,'train_package'),
 (5,'destination_warehouse'),
-(6,'truck_package'),
+(6,'In_truck'),
 (7,'delivered');
 
 INSERT INTO orders(customerID, productID, date, quantity, routeID, trackingNO) VALUES
@@ -276,3 +276,7 @@ INSERT INTO  train_package (scheduleID, orderID) VALUES
       (6,32),
       (18,19),
       (19,10);
+
+
+
+"Here i changed this"
