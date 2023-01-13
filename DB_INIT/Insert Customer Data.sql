@@ -276,7 +276,3 @@ INSERT INTO  train_package (scheduleID, orderID) VALUES
       (6,32),
       (18,19),
       (19,10);
-
-
-
-"Here i changed this"

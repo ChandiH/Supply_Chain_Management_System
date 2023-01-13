@@ -1,14 +1,14 @@
-drop procedure if exists view_month_sales;
-drop procedure if exists view_quarter_sales;
-drop procedure if exists sales_report;
-drop procedure if exists get_working_hours;
-drop procedure if exists customer_report;
-drop procedure if exists city_sales;
+drop procedure if exists `city_sales`;
+drop procedure if exists `view_month_sales`;
+drop procedure if exists `view_quarter_sales`;
+drop procedure if exists `sales_report(year)`;
+drop procedure if exists `working_hours/month(ID)`;
+drop procedure if exists `truck_hours/month(ID)`;
+drop procedure if exists `customer_report(ID)`;
 
 Delimiter $$
-create procedure city_sales(
-IN city VARCHAR(20)
-)
+create procedure `city_sales`
+	(IN city VARCHAR(20))
 begin 
 SELECT 
 startingCity as 'Main City',
@@ -25,19 +25,16 @@ order by year(date) desc, month(date) asc;
 end$$
 
 
-create procedure view_month_sales
-(
-	IN input_year INT,
-    IN input_month INT
-)
+create procedure `view_month_sales`
+	(IN input_year INT,
+    IN input_month INT)
 begin 
 select * from orders_products
 where yearOf = input_year and monthOf = input_month;
 end $$
 
 
-
-create procedure view_quarter_sales
+create procedure `view_quarter_sales`
 	( IN input_year INT,
 	  IN input_quarter INT)
 begin
@@ -53,7 +50,7 @@ begin
     order by month(date) asc;
 end$$
 
-create procedure sales_report
+create procedure `sales_report(year)`
 	( IN input_year INT)
 begin
 	select
@@ -69,20 +66,25 @@ begin
 end$$
 
 
-create procedure get_working_hours
-(
-	IN employer_ID INT
-)
+create procedure `working_hours/month(ID)`
+	(IN employer_ID INT)
 begin
-SELECT * FROM scms.working_hours
+SELECT * FROM scms.`working_hours/month`
 where ID = employer_ID;
 end$$
 
 
-create PROCEDURE customer_report
-(
-IN input_ID INT
-)
+create procedure `truck_hours/month(ID)`
+	(IN input_truck_ID VARCHAR(12))
+begin
+SELECT * FROM scms.truck_hours
+where truckID = input_truck_ID 
+order by truckID, year desc, month asc;
+end$$
+
+
+create PROCEDURE `customer_report(ID)`
+	(IN input_ID INT)
 begin
 SELECT 
 	c.ID,
